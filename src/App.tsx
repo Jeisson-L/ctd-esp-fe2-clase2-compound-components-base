@@ -8,12 +8,14 @@ import { store } from 'store/store';
 import Page1 from 'pages/Page1';
 import { LanguageComponent, LanguageProvider } from 'features/language';
 import { TrackingProvider } from 'features/tracking/tracking.context';
+import  NavbarWithLoading from 'features/navigation/NavbarWithLoading';
 
 const App: FC = () => (
   <Provider store={store}>
     <TrackingProvider>
       <LanguageProvider>
         <LanguageComponent />
+        <NavbarWithLoading isLoading={true} onFailedToLoad={false} />
         <Navbar />
         <Routes>
           <Route path="/" element={<Page3 />} />
